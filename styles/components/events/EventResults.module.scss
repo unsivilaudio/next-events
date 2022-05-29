@@ -1,0 +1,17 @@
+.EventResults {
+    padding: 2rem 3.5rem;
+
+    .Header {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: var(--header-font-size);
+        font-family: var(--header-font-family);
+        font-weight: var(--header-font-weight);
+    }
+
+    .Actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+}

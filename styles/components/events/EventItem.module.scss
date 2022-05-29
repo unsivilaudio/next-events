@@ -1,0 +1,76 @@
+.EventItem {
+    width: 100%;
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+
+    svg {
+        height: 2.2rem;
+    }
+
+    .ImageContainer {
+        flex-basis: 40rem;
+        height: 30rem;
+        overflow: hidden;
+
+        .Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .Content {
+        padding: 2rem 4.5rem;
+        flex-grow: 1;
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .Summary {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .Title {
+                font-family: var(--title-font-family);
+                font-weight: var(--title-font-weight);
+                font-size: var(--title-font-size);
+                text-transform: capitalize;
+            }
+
+            .Date,
+            .Address {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+            }
+
+            .Date {
+                color: var(--color-grey-dark-3);
+                font-weight: 400;
+            }
+
+            .Address {
+                font-style: italic;
+                white-space: pre;
+            }
+        }
+
+        .Actions {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+
+            a {
+                position: relative;
+                transition: all 0.3s ease;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    }
+}

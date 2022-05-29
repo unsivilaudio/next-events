@@ -1,0 +1,33 @@
+.EventSearch {
+    color: currentColor;
+    padding: 2rem 3.5rem;
+
+    .Title {
+        font-family: var(--title-font-family);
+        font-size: var(--title-font-size);
+        font-weight: var(--title-font-weight);
+        text-transform: uppercase;
+    }
+
+    .SearchForm {
+        display: flex;
+        gap: 2rem;
+
+        .FormGroup {
+            margin-top: 1.5rem;
+            flex-basis: 50%;
+        }
+    }
+
+    .Actions {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+            text-transform: uppercase;
+            font-weight: 400;
+            padding: 0.8rem 2.2rem;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.Card {
+    width: inherit;
+    display: inherit;
+    overflow: hidden;
+    background: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow-primary);
+}

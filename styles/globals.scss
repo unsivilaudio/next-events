@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --text-light: #ebebef;
+    --text-muted: #818589;
+    --text-dark: #1f1f1f;
+    --body-text: #1f1f1f;
+    --body-bg: #ecefed;
+
+    --color-grey-light-1: #ded7d7;
+    --color-grey-light-2: #b5bbc1;
+    --color-grey-light-3: #acadb4;
+    --color-grey-light-4: #92969a;
+
+    --color-grey-dark-1: #818589;
+    --color-grey-dark-2: #72767a;
+    --color-grey-dark-3: #606265;
+    --color-grey-dark-4: #4e4f52;
+
+    --navbar-font-family: 'Poppins';
+    --navbar-color-bg: #2d2d2d;
+    --navbar-color-text: var(--text-light);
+    --navbar-color-link: var(--text-light);
+    --navbar-color-link-hover: #eb339b;
+
+    --header-font-family: 'Poppins';
+    --header-font-size: 4.5rem;
+    --header-font-weight: 300;
+
+    --title-font-family: 'Roboto';
+    --title-font-size: 2.8rem;
+    --title-font-weight: 400;
+
+    --link-active: #7e9ae3;
+    --link-hover: #3b5fd4;
+
+    --card-bg: #fefefe;
+    --card-shadow-primary: 0 2px 3px 1px rgba(0, 0, 0, 0.18),
+        0 0 5px 3px rgba(0, 0, 0, 0.35);
+    --card-border-radius: 1rem;
+
+    --button-color-primary: #5f7bd9;
+    --button-color-primary-hover: #3b5fd4;
+    --button-color-success: #5ad142;
+    --button-color-success-hover: #1baf28;
+    --button-color-danger: #c76145;
+    --button-color-danger-hover: #e7431a;
+
+    --button-border-radius: 0.7rem;
+    --button-shadow-primary: 0 2px 3px 1px rgba(0, 0, 0, 0.18);
+    --button-shadow-hover: 0 2px 5px 2px rgba(0, 0, 0, 0.35);
+
+    --select-shadow-primary: 0 2px 3px 1px rgba(0, 0, 0, 0.07);
+    --select-color-bg: #ebebeb;
+    --select-border-radius: 0.7rem;
+    --select-padding: 0.7rem 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--body-text);
+    background: var(--body-bg);
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-family: 'Roboto', 'Poppins', san-serif;
+
+    a {
+        text-decoration: none;
+        font-family: inherit;
+        color: var(--link-active);
+        &:hover {
+            color: var(--link-hover);
+        }
+    }
+}
+
+@media screen and (max-width: 75em) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media screen and (max-width: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+}

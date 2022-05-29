@@ -1,0 +1,56 @@
+.Button {
+    color: currentColor;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--button-border-radius);
+    box-shadow: var(--button-shadow-primary);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--button-shadow-hover);
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(-1px);
+    }
+
+    &.Invert {
+        border: 1px solid currentColor;
+        box-shadow: none;
+        &:hover,
+        &:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+    }
+
+    &.Primary {
+        color: var(--text-light);
+        background: var(--button-color-primary);
+        &:hover {
+            background: var(--button-color-primary-hover);
+        }
+    }
+
+    &.Success {
+        color: var(--text-light);
+        background: var(--button-color-success);
+        &:hover {
+            background: var(--button-color-success-hover);
+        }
+    }
+
+    &.Danger {
+        color: var(--text-light);
+        background: var(--button-color-danger);
+        &:hover {
+            background: var(--button-color-danger-hover);
+        }
+    }
+}

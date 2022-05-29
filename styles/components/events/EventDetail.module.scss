@@ -1,0 +1,49 @@
+.EventDetail {
+    .Header {
+        color: var(--text-light);
+        text-shadow: 2px 3px 1px var(--text-dark);
+        padding: 4rem 0;
+        position: relative;
+
+        p {
+            font-family: var(--header-font-family);
+            font-size: var(--header-font-size);
+            font-weight: var(--header-font-weight);
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            z-index: 1;
+        }
+
+        .HeaderBg {
+            height: 40rem;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+
+            &::before {
+                position: absolute;
+                display: block;
+                content: '';
+                top: 0;
+                left: 50%;
+                height: 100%;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.35);
+                transform: translateX(-50%);
+            }
+
+            img {
+                height: 100%;
+                width: 100vw;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .Content {
+        padding: 1.5rem 2.5rem;
+    }
+}

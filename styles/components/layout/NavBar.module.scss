@@ -1,0 +1,60 @@
+.NavBar {
+    color: var(--navbar-color-text);
+    background: var(--navbar-color-bg);
+    font-family: var(--navbar-font-family);
+    padding: 1.2rem 4rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Brand {
+        font-size: 3rem;
+        font-weight: 100;
+        text-transform: uppercase;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    .NavList {
+        font-weight: 400;
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+
+        .NavItem {
+            position: relative;
+            color: var(--navbar-color-link);
+
+            &::after {
+                position: absolute;
+                background: currentColor;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                transform: scale(0);
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    background: var(--navbar-color-link-hover);
+                    transform: scale(1);
+                }
+            }
+
+            a {
+                color: inherit;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: var(--navbar-color-link-hover);
+                }
+            }
+        }
+    }
+}

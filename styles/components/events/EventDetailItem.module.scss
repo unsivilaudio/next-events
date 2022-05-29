@@ -1,0 +1,41 @@
+.EventDetailItem {
+    padding: 1.5rem 0;
+    display: flex;
+
+    .Title {
+        position: relative;
+        color: var(--text-muted);
+        padding-left: 2rem;
+        font-size: 2.4rem;
+        font-weight: 600;
+        writing-mode: vertical-rl;
+        text-align: left;
+        text-transform: uppercase;
+        transform: rotate(180deg);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            display: block;
+            content: '';
+            height: 100%;
+            width: 3px;
+            background: var(--color-grey-light-4);
+        }
+    }
+
+    .Content {
+        flex-grow: 1;
+        flex-basis: 90%;
+        font-size: 2.4rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding: 0 0 1.2rem 2rem;
+    }
+}
