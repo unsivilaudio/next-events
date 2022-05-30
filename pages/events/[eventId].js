@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import axios from 'helpers/with-axios';
 import EventDetail from 'components/events/EventDetail';
 import classes from 'styles/pages/EventDetailPage.module.scss';
@@ -9,6 +10,10 @@ const EventDetailPage = props => {
 
     return (
         <div className={classes.EventDetailPage}>
+            <Head>
+                <title>{props.event.title} | Next.js Events</title>
+                <meta description='Find a lot of great events that allow you to evolve!' />
+            </Head>
             <EventDetail event={props.event} />
         </div>
     );

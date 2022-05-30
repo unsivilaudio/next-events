@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import axios from 'helpers/with-axios';
@@ -19,6 +20,10 @@ const AllEventsPage = props => {
 
     return (
         <div className={classes.AllEventsPage}>
+            <Head>
+                <title>All Events | Next.js Events</title>
+                <meta description='Find a lot of great events that allow you to evolve!' />
+            </Head>
             <EventSearch onSearch={findEventsHandler} />
             <EventList items={props.events || []} />
         </div>

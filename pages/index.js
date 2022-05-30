@@ -9,6 +9,7 @@ export default function HomePage(props) {
         <div className={classes.HomePage}>
             <Head>
                 <title>Home | Next.js Events</title>
+                <meta description='Find a lot of great events that allow you to evolve!' />
             </Head>
             <div>
                 {props.featuredEvents ? (
