@@ -66,8 +66,6 @@ export async function getServerSideProps({ query }) {
             return false;
         });
 
-    console.log(events);
-
     return {
         props: {
             events,

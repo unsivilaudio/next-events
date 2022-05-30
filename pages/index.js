@@ -25,7 +25,6 @@ export async function getStaticProps() {
     const { data } = await axios.get(
         '/events.json?orderBy="isFeatured"&startAt=true'
     );
-    console.log(data);
     const featuredEvents = Object.keys(data).map(id => ({
         id,
         ...data[id],

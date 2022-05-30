@@ -7,8 +7,6 @@ const EventDetailPage = props => {
         return <h3>Loading...</h3>;
     }
 
-    console.log(props.event);
-
     return (
         <div className={classes.EventDetailPage}>
             <EventDetail event={props.event} />

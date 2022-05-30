@@ -13,7 +13,7 @@ const NavBar = props => {
                     <Link href='/events'>Browse All Events</Link>
                 </li>
                 <li className={classes.NavItem}>
-                    <Link href='#'>World</Link>
+                    <Link href='#'>Add Event</Link>
                 </li>
             </ul>
         </div>
