@@ -1,0 +1,19 @@
+.CommentsList {
+    margin-top: 3rem;
+
+    .CommentsToggle {
+        font-weight: 600;
+        font-size: 2rem;
+
+        button {
+            text-transform: uppercase;
+        }
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .List {
+        margin-top: 2rem;
+    }
+}

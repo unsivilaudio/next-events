@@ -17,6 +17,8 @@
     --color-grey-dark-3: #606265;
     --color-grey-dark-4: #4e4f52;
 
+    --gradient-blue-1: linear-gradient(to top right, #7b93d9, #4d74ea, #5b12ed);
+
     --navbar-font-family: 'Poppins';
     --navbar-color-bg: #2d2d2d;
     --navbar-color-text: var(--text-light);
@@ -38,6 +40,9 @@
     --card-shadow-primary: 0 2px 3px 1px rgba(0, 0, 0, 0.18),
         0 0 5px 3px rgba(0, 0, 0, 0.35);
     --card-border-radius: 1rem;
+
+    --input-bg: #fefefe;
+    --input-border-radius: 1rem;
 
     --button-color-primary: #5f7bd9;
     --button-color-primary-hover: #3b5fd4;
@@ -86,6 +91,21 @@ body {
         &:hover {
             color: var(--link-hover);
         }
+    }
+}
+
+textarea,
+input {
+    padding: 0.8rem 1.5rem;
+    background: var(--input-bg);
+    border: none;
+    border-radius: var(--input-border-radius);
+    font-family: inherit;
+    font-size: inherit;
+
+    &:focus-within {
+        outline: none;
+        box-shadow: 0 0 10px 3px var(--link-hover);
     }
 }
 

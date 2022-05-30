@@ -1,0 +1,32 @@
+.CommentsForm {
+    color: var(--text-light);
+    background: var(--gradient-blue-1);
+    margin-top: 1.5rem;
+    padding: 2rem;
+    padding-bottom: 3.2rem;
+    border-radius: 0 1.5rem 0 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .FormGroup {
+        flex-basis: calc(50% - 0.75rem);
+
+        &:nth-child(3) {
+            flex-basis: 100%;
+        }
+
+        textarea {
+            resize: none;
+            height: 15rem;
+        }
+    }
+
+    .Actions {
+        margin-top: 1.2rem;
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

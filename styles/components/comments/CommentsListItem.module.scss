@@ -1,0 +1,21 @@
+.CommentsListItem {
+    padding: 1.5rem 3.2rem;
+    border-bottom: 1px solid var(--text-muted);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .Author,
+    .Text {
+        flex-basis: 100%;
+    }
+
+    .Text {
+        font-size: 2rem;
+    }
+
+    .Author {
+        text-align: right;
+        color: var(--text-muted);
+    }
+}

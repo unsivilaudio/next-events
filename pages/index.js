@@ -2,6 +2,7 @@ import Head from 'next/head';
 import EventList from 'components/events/EventList';
 
 import axios from 'helpers/with-axios';
+import NewsLetterForm from 'components/newsletter/NewsLetterForm';
 import classes from 'styles/pages/HomePage.module.scss';
 
 export default function HomePage(props) {
@@ -11,6 +12,7 @@ export default function HomePage(props) {
                 <title>Home | Next.js Events</title>
                 <meta description='Find a lot of great events that allow you to evolve!' />
             </Head>
+            <NewsLetterForm />
             <div>
                 {props.featuredEvents ? (
                     <EventList items={props.featuredEvents} />

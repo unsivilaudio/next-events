@@ -1,0 +1,27 @@
+.FormGroup {
+    display: inherit;
+
+    label {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+        display: block;
+    }
+
+    textarea,
+    input {
+        width: 100%;
+        margin: 0;
+        flex: 1;
+        font-size: inherit;
+        font-family: inherit;
+        border: none;
+        border-radius: 0.8rem;
+
+        &:focus-within {
+            outline: none;
+            box-shadow: 0 0 10px 3px var(--link-hover);
+        }
+    }
+}

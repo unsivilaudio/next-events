@@ -20,6 +20,7 @@ const Button = ({
             break;
         case 'danger':
             btnClasses.push(classes.Danger);
+            break;
         case 'invert':
             btnClasses.push(classes.Invert);
             break;
