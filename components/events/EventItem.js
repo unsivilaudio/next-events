@@ -43,7 +43,10 @@ const EventItem = ({ title, image, date, location, id }) => {
                     </div>
                     <div className={classes.Actions}>
                         <Button link={exploreLink} theme='invert'>
-                            Explore Event <ArrowRightIcon />
+                            <div className={classes.CTAExplore}>
+                                <p className={classes.CTAText}>Explore Event</p>
+                                <ArrowRightIcon className={classes.CTAIcon} />
+                            </div>
                         </Button>
                     </div>
                 </div>

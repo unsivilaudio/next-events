@@ -21,7 +21,6 @@ const NewsLetterForm = props => {
             <div className={classes.Header}>Subscribe to stay informed!</div>
             <div className={classes.Content}>
                 <div className={classes.FormGroup}>
-                    <label htmlFor='email'>Email</label>
                     <input
                         type='text'
                         value={email}
