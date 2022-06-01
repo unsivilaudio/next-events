@@ -7,8 +7,8 @@ export default async function useHandler(req, res) {
 
     switch (method) {
         case 'POST':
-            const { email, username, password } = body;
-            if (!email || !password) {
+            const { userId, password } = body;
+            if (!userId || !password) {
                 return res.status(400).json({
                     status: 'fail',
                     message:
@@ -17,8 +17,8 @@ export default async function useHandler(req, res) {
             }
 
             let user = await User.create({
-                email,
-                username,
+                email: userId,
+                username: userId,
                 password,
             });
             user.password = undefined;

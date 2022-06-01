@@ -1,11 +1,13 @@
 import Head from 'next/head';
+import { SessionProvider } from 'next-auth/react';
+
 import NavBar from '../components/layout/NavBar';
 import Layout from '../components/layout/Layout';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
     return (
-        <>
+        <SessionProvider>
             <NavBar />
             <Layout>
                 <Head>
@@ -21,7 +23,7 @@ function MyApp({ Component, pageProps }) {
                 </Head>
                 <Component {...pageProps} />
             </Layout>
-        </>
+        </SessionProvider>
     );
 }
 
