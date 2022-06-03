@@ -22,16 +22,13 @@ const EventDetailPage = props => {
 };
 
 export async function getServerSideProps({ query }) {
-    const { data } = await axios.get(`/events/${query.eventId}.json`);
+    const { data } = await axios.get(`/events/${query.eventId}`);
 
     if (!data) {
         return { notFound: true };
     }
 
-    const event = {
-        id: query.eventId,
-        ...data,
-    };
+    const event = data.event;
 
     return {
         props: {

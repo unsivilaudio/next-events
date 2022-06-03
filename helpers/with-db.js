@@ -6,6 +6,7 @@ export async function getDBClient() {
         const server = await mongoose.connect('mongodb://127.0.0.1:27017', {
             dbName: 'next-events-dev',
             connectTimeoutMS: 10000,
+            maxIdleTimeMS: 120 * 1000,
         });
 
         server.connection.on('connection', () => {
@@ -20,4 +21,9 @@ export async function getDBClient() {
     }
 
     return client;
+}
+
+export function validateId(val) {
+    const mongoObject = /^[0-9a-fA-F]{24}$/;
+    return mongoObject.test(val);
 }

@@ -25,17 +25,11 @@ export default function HomePage(props) {
 }
 
 export async function getStaticProps() {
-    const { data } = await axios.get(
-        '/events.json?orderBy="isFeatured"&startAt=true'
-    );
-    const featuredEvents = Object.keys(data).map(id => ({
-        id,
-        ...data[id],
-    }));
+    const { data } = await axios.get('/events?isFeatured=true');
 
     return {
         props: {
-            featuredEvents,
+            featuredEvents: data.events,
         },
         revalidate: 86400,
     };

@@ -7,8 +7,8 @@ const EventList = ({ items }) => {
             <ul className={classes.List}>
                 {items.map(x => (
                     <EventItem
-                        id={x.id}
-                        key={x.id}
+                        id={x._id}
+                        key={x._id}
                         title={x.title}
                         location={x.location}
                         image={x.image}

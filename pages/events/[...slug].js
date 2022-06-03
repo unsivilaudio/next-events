@@ -52,7 +52,7 @@ export async function getServerSideProps({ query }) {
         };
     }
 
-    const { data } = await axios.get('/events.json');
+    const { data } = await axios.get('/events');
     if (!data) {
         return {
             props: {
@@ -61,21 +61,13 @@ export async function getServerSideProps({ query }) {
         };
     }
 
-    const events = Object.keys(data)
-        .map(id => ({
-            id,
-            ...data[id],
-        }))
-        .filter(x => {
-            let xDate = new Date(x.date);
-            if (
-                xDate.getFullYear() === +year &&
-                xDate.getMonth() === +month - 1
-            ) {
-                return true;
-            }
-            return false;
-        });
+    const events = data.events.filter(x => {
+        let xDate = new Date(x.date);
+        if (xDate.getFullYear() === +year && xDate.getMonth() === +month - 1) {
+            return true;
+        }
+        return false;
+    });
 
     return {
         props: {

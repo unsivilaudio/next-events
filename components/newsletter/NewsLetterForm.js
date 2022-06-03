@@ -1,13 +1,18 @@
 import { useState } from 'react';
+
+import axios from 'helpers/with-axios';
 import Button from 'components/ui/Button';
-import Card from 'components/layout/Card';
 import classes from 'styles/components/newsletter/NewsLetterForm.module.scss';
 
 const NewsLetterForm = props => {
     const [email, setEmail] = useState('');
 
-    function subscribeFormHandler(e) {
+    async function subscribeFormHandler(e) {
         e.preventDefault();
+        if (email !== '') {
+            await axios.post('/newsletter/subscribe', { email });
+            setEmail('');
+        }
     }
 
     function handleChangeEmail(e) {

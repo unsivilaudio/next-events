@@ -31,15 +31,11 @@ const AllEventsPage = props => {
 };
 
 export async function getServerSideProps() {
-    const { data } = await axios.get('/events.json');
-    const events = Object.keys(data).map(id => ({
-        id,
-        ...data[id],
-    }));
+    const { data } = await axios.get('/events');
 
     return {
         props: {
-            events,
+            events: data.events,
         },
     };
 }
