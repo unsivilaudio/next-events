@@ -15,6 +15,10 @@
         box-shadow: var(--button-shadow-hover);
     }
 
+    &:focus {
+        outline: none;
+    }
+
     &:active {
         box-shadow: none;
         transform: translateY(-1px);

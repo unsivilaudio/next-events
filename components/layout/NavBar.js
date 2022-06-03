@@ -26,15 +26,15 @@ const NavBar = props => {
             </div>
             <ul className={classes.NavList}>
                 <li className={classes.NavItem}>
-                    <a onClick={handleAuthNav}>
-                        {session?.user ? 'Logout' : 'Login'}
-                    </a>
-                </li>
-                <li className={classes.NavItem}>
                     <Link href='/events'>Browse All Events</Link>
                 </li>
                 <li className={classes.NavItem}>
                     <Link href='#'>Add Event</Link>
+                </li>
+                <li className={classes.NavItem}>
+                    <a onClick={handleAuthNav}>
+                        {session?.user ? 'Logout' : 'Login'}
+                    </a>
                 </li>
             </ul>
         </div>

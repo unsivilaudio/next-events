@@ -1,5 +1,5 @@
 .CommentsList {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 
     .CommentsToggle {
         font-weight: 600;
@@ -13,7 +13,15 @@
         justify-content: center;
     }
 
-    .List {
+    .CommentsTitle {
         margin-top: 2rem;
+        padding: 1rem 2.2rem;
+        font-size: var(--title-font-size);
+        font-family: var(--title-font-family);
+        font-weight: var(--title-font-weight);
+    }
+
+    .List {
+        margin-top: 1.2rem;
     }
 }

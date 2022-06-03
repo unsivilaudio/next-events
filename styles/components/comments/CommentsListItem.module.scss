@@ -1,21 +1,56 @@
 .CommentsListItem {
-    padding: 1.5rem 3.2rem;
+    padding: 1rem 3.2rem;
     border-bottom: 1px solid var(--text-muted);
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
     .Author,
     .Text {
-        flex-basis: 100%;
-    }
-
-    .Text {
-        font-size: 2rem;
+        font-weight: 300;
     }
 
     .Author {
+        font-family: var(--header-font-family);
         text-align: right;
-        color: var(--text-muted);
+
+        span {
+            font-weight: 400;
+        }
+
+        &:not(span) {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+    }
+
+    .Text {
+        position: relative;
+        font-size: 2rem;
+
+        &::before,
+        &::after {
+            height: 100%;
+            color: var(--text-muted);
+            position: absolute;
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        &::before {
+            top: -3px;
+            left: -1.5rem;
+            content: '\201C';
+            margin-right: 0.3rem;
+        }
+
+        &::after {
+            top: -3px;
+            right: -1.5rem;
+            content: '\201D';
+            margin-left: 0.3rem;
+        }
     }
 }

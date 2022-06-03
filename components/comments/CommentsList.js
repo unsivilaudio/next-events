@@ -29,6 +29,7 @@ const CommentsList = props => {
             {showComments && (
                 <div className={classes.Container}>
                     <CommentsForm />
+                    <div className={classes.CommentsTitle}>Comments</div>
                     <ul className={classes.List}>
                         {comments.map(comment => (
                             <CommentsListItem

@@ -58,7 +58,9 @@ const CommentsForm = props => {
                 />
             </div>
             <div className={classes.Actions}>
-                <Button type='submit'>Add Comment</Button>
+                <Button type='submit' theme='success'>
+                    Add Comment
+                </Button>
             </div>
         </form>
     );

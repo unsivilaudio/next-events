@@ -1,6 +1,7 @@
 export async function useHandler(req, res) {
     const { method, body, query } = req;
     const { eventId } = query;
+    const { email, name, text } = body;
     switch (method) {
         case 'GET':
             console.log(eventId);
@@ -9,6 +10,13 @@ export async function useHandler(req, res) {
                 comments: [],
             });
         case 'POST':
+            if (!email || !name || text) {
+                return res.status(422).json({
+                    status: 'fail',
+                    message:
+                        'Missing one or more route parameters: email name text',
+                });
+            }
             console.log(body);
             return res.status(201).json({
                 status: 'success',

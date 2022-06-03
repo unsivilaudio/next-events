@@ -4,7 +4,9 @@ const CommentsListItem = ({ comment }) => {
     return (
         <li className={classes.CommentsListItem}>
             <div className={classes.Text}>{comment.comment}</div>
-            <div className={classes.Author}>By {comment.name}</div>
+            <div className={classes.Author}>
+                By <span>{comment.name}</span>
+            </div>
         </li>
     );
 };

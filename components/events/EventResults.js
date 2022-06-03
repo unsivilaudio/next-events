@@ -9,16 +9,14 @@ const EventResults = ({ date }) => {
     });
 
     return (
-        <Card>
-            <div className={classes.EventResults}>
-                <div className={classes.Header}>
-                    Events in {humanReadableDate}
-                </div>
-                <div className={classes.Actions}>
-                    <Button link='/events'>Show All Events</Button>
-                </div>
+        <div className={classes.EventResults}>
+            <div className={classes.Header}>Events in {humanReadableDate}</div>
+            <div className={classes.Actions}>
+                <Button link='/events' theme='invert'>
+                    Show All Events
+                </Button>
             </div>
-        </Card>
+        </div>
     );
 };
 

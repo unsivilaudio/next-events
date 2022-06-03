@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
     --text-light: #ebebef;
@@ -26,8 +26,8 @@
     --navbar-color-link-hover: #eb339b;
 
     --header-font-family: 'Poppins';
-    --header-font-size: 4.5rem;
-    --header-font-weight: 300;
+    --header-font-size: 4.2rem;
+    --header-font-weight: 200;
 
     --title-font-family: 'Roboto';
     --title-font-size: 2.8rem;
@@ -85,6 +85,7 @@ body {
     font-family: 'Roboto', 'Poppins', san-serif;
 
     a {
+        outline: none;
         text-decoration: none;
         font-family: inherit;
         color: var(--link-active);
@@ -92,20 +93,20 @@ body {
             color: var(--link-hover);
         }
     }
-}
 
-textarea,
-input {
-    padding: 0.8rem 1.5rem;
-    background: var(--input-bg);
-    border: none;
-    border-radius: var(--input-border-radius);
-    font-family: inherit;
-    font-size: inherit;
+    textarea,
+    input {
+        padding: 0.8rem 1.5rem;
+        background: var(--input-bg);
+        border: none;
+        border-radius: var(--input-border-radius);
+        font-family: inherit;
+        font-size: inherit;
 
-    &:focus-within {
-        outline: none;
-        box-shadow: 0 0 10px 3px var(--link-hover);
+        &:focus-within {
+            outline: none;
+            box-shadow: 0 0 10px 3px var(--link-hover);
+        }
     }
 }
 
