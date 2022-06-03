@@ -2,7 +2,7 @@ import Subscription from 'models/Subscription';
 import { isEmail } from 'helpers/email';
 
 export default async function useHandler(req, res) {
-    const { method, body, query } = req;
+    const { method, body } = req;
 
     switch (method) {
         case 'POST':

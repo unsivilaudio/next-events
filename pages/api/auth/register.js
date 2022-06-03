@@ -1,4 +1,5 @@
 import { getDBClient } from 'helpers/with-db';
+import { isEmail } from 'helpers/email';
 import User from 'models/User';
 
 export default async function useHandler(req, res) {
@@ -12,11 +13,19 @@ export default async function useHandler(req, res) {
                 return res.status(400).json({
                     status: 'fail',
                     message:
-                        'Missing one or more request params: email password',
+                        'Missing one or more request params: userId password',
+                });
+            }
+            const findBy = isEmail(userId) ? 'email' : 'username';
+            let user = await User.findOne({ [findBy]: userId });
+            if (user) {
+                return res.status(400).json({
+                    status: 'fail',
+                    message: 'User already registered.',
                 });
             }
 
-            let user = await User.create({
+            user = await User.create({
                 email: userId,
                 username: userId,
                 password,

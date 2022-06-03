@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { toastError } from 'helpers/notification';
 import Input from 'components/ui/Input';
 import Button from 'components/ui/Button';
 import classes from 'styles/components/auth/AuthForm.module.scss';
@@ -30,7 +31,7 @@ const AuthForm = ({ type = 'register', toggleAuth, handleAuthSubmit }) => {
         e.preventDefault();
         if (userId !== '' && password !== '') {
             if (type === 'register' && password !== passwordConfirm) {
-                console.log('PASSWORDS DONT MATCH');
+                toastError('Passwords do not match.');
                 return;
             }
 

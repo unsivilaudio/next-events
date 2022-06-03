@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'helpers/with-axios';
 import Button from 'components/ui/Button';
 import classes from 'styles/components/newsletter/NewsLetterForm.module.scss';
+import { toastSuccess } from 'helpers/notification';
 
 const NewsLetterForm = props => {
     const [email, setEmail] = useState('');
@@ -10,7 +11,12 @@ const NewsLetterForm = props => {
     async function subscribeFormHandler(e) {
         e.preventDefault();
         if (email !== '') {
-            await axios.post('/newsletter/subscribe', { email });
+            const { data } = await axios.post('/newsletter/subscribe', {
+                email,
+            });
+            if (data?.message) {
+                toastSuccess(data.message);
+            }
             setEmail('');
         }
     }

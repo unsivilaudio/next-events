@@ -1,20 +1,34 @@
 import { useState, useEffect } from 'react';
-import { getSession, signIn } from 'next-auth/react';
+import { getSession, useSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
+import withDebounce from 'hooks/with-debounce';
+import { toastError, toastSuccess } from 'helpers/notification';
 import axios from 'helpers/with-axios';
 import AuthForm from 'components/auth/AuthForm';
 import classes from 'styles/pages/AuthPage.module.scss';
 
-export default function AuthPage({ session }) {
+export default function AuthPage(props) {
+    const { data: session } = useSession();
+    const { debounce, isActive } = withDebounce();
     const router = useRouter();
     const [authType, setAuthType] = useState('signin');
 
     useEffect(() => {
-        if (session?.user) {
+        if (session?.user && debounce && !isActive) {
+            let message = '';
+            switch (authType) {
+                case 'signin':
+                    message = `Hello again ${session.user.username}`;
+                    break;
+                case 'register':
+                    message = `Welcome to next-events ${session.user.username}`;
+                    break;
+            }
+            debounce(toastSuccess.bind(null, message));
             router.push('/');
         }
-    }, [session]);
+    }, [session, authType, debounce, isActive]);
 
     function toggleAuthType() {
         setAuthType(st => {
@@ -26,17 +40,34 @@ export default function AuthPage({ session }) {
     }
 
     async function handleAuthSubmit({ userId, password }) {
-        if (authType === 'register') {
-            await axios.post('http://localhost:3000/api/auth/register', {
+        try {
+            if (authType === 'register') {
+                await axios
+                    .post('/auth/register', {
+                        userId,
+                        password,
+                    })
+                    .catch(err => {
+                        let message = err.message;
+                        if (err.response?.data?.message) {
+                            message = err.response.data.message;
+                        }
+                        throw new Error(message);
+                    });
+            }
+
+            const res = await signIn('credentials', {
                 userId,
                 password,
+                redirect: false,
             });
-        }
 
-        await signIn('credentials', {
-            userId,
-            password,
-        });
+            if (res.error) {
+                throw new Error(res.error);
+            }
+        } catch (err) {
+            toastError(err.message);
+        }
     }
 
     return (
@@ -48,14 +79,4 @@ export default function AuthPage({ session }) {
             />
         </div>
     );
-}
-
-export async function getServerSideProps({ req }) {
-    const session = await getSession({ req });
-
-    return {
-        props: {
-            session,
-        },
-    };
 }

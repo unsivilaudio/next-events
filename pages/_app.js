@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
+import { ToastContainer } from 'react-toastify';
 
 import NavBar from '../components/layout/NavBar';
 import Layout from '../components/layout/Layout';
+import 'react-toastify/dist/ReactToastify.min.css';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
     return (
         <SessionProvider>
+            <ToastContainer theme='colored' />
             <NavBar />
             <Layout>
                 <Head>

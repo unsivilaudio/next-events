@@ -30,7 +30,7 @@ export default NextAuth({
                     return user;
                 } catch (err) {
                     console.log(err.message);
-                    return null;
+                    throw err;
                 }
             },
         }),
