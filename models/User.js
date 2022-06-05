@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { hash, genSalt, compare } from 'bcrypt';
+import { isEmail } from 'helpers/email';
 
 const userSchema = new mongoose.Schema(
     {
@@ -7,6 +8,12 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             unique: true,
+            validate: {
+                validator: function (val) {
+                    return isEmail(val);
+                },
+                message: () => 'Invalid email provided.',
+            },
         },
         username: {
             type: String,

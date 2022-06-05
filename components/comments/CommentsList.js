@@ -26,7 +26,6 @@ const CommentsList = ({ currentUser, eventId }) => {
 
     function fetchComments() {
         axios.get(`/comments/${eventId}`).then(res => {
-            console.log(res.data);
             setComments(res.data.comments);
         });
     }

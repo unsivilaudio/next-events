@@ -24,10 +24,18 @@ export default async function useHandler(req, res) {
                     message: 'User already registered.',
                 });
             }
+            console.log(findBy);
+
+            if (findBy === 'username') {
+                return res.status(422).json({
+                    status: 'fail',
+                    message: 'Please provide a valid email.',
+                });
+            }
 
             user = await User.create({
                 email: userId,
-                username: userId,
+                username: userId.split('@')[0],
                 password,
             });
             user.password = undefined;

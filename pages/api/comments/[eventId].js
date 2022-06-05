@@ -15,8 +15,6 @@ export default async function useHandler(req, res) {
                     new Promise(async resolve => {
                         const user = await User.findById(comment.userId);
                         if (user) {
-                            console.log('FOUND USER!');
-                            console.log(user);
                             return resolve(
                                 Object.assign({}, comment._doc, {
                                     email: user.email,
