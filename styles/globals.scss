@@ -19,17 +19,16 @@
 
     --gradient-blue-1: linear-gradient(to top right, #7b93d9, #4d74ea, #5b12ed);
 
-    --navbar-font-family: 'Poppins';
+    --navbar-font-family: 'Poppins', 'Lato', sans-serif;
     --navbar-color-bg: #2d2d2d;
     --navbar-color-text: var(--text-light);
     --navbar-color-link: var(--text-light);
     --navbar-color-link-hover: #eb339b;
-
-    --header-font-family: 'Poppins';
-    --header-font-size: 4.2rem;
+    --header-font-family: 'Poppins', 'Lato', sans-serif;
+    --header-font-size: 3.2rem;
     --header-font-weight: 200;
 
-    --title-font-family: 'Roboto';
+    --title-font-family: 'Roboto', sans-serif;
     --title-font-size: 2.8rem;
     --title-font-weight: 400;
 
@@ -82,7 +81,7 @@ body {
     background: var(--body-bg);
     font-size: 1.6rem;
     font-weight: 300;
-    font-family: 'Roboto', 'Poppins', san-serif;
+    font-family: 'Roboto', 'Poppins', 'Lato', sans-serif;
 
     a {
         outline: none;

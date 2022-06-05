@@ -25,6 +25,7 @@
         gap: 2rem;
 
         .NavItem {
+            padding: 0.3rem 0;
             position: relative;
             color: var(--navbar-color-link);
 
@@ -40,19 +41,19 @@
                 transition: all 0.3s ease;
             }
 
+            a {
+                cursor: pointer;
+                color: inherit;
+                transition: all 0.3s ease;
+            }
+
             &:hover {
                 &::after {
                     background: var(--navbar-color-link-hover);
                     transform: scale(1);
                 }
-            }
 
-            a {
-                cursor: pointer;
-                color: inherit;
-                transition: all 0.3s ease;
-
-                &:hover {
+                a {
                     color: var(--navbar-color-link-hover);
                 }
             }

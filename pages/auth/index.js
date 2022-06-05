@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getSession, useSession, signIn } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 import withDebounce from 'hooks/with-debounce';

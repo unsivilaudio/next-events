@@ -11,6 +11,7 @@
     gap: 1.5rem;
 
     .FormGroup {
+        flex: 1;
         flex-basis: calc(50% - 0.75rem);
 
         &:nth-child(3) {
@@ -19,7 +20,7 @@
 
         textarea {
             resize: none;
-            height: 15rem;
+            height: 12rem;
         }
     }
 

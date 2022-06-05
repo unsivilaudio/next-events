@@ -43,7 +43,7 @@ export default NextAuth({
                 if (currentUser) {
                     session.user.id = currentUser._id;
                     session.user.username =
-                        currentUser.username || currentUser.email;
+                        currentUser.username || currentUser.email.split('@')[0];
                 } else {
                     return;
                 }

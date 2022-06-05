@@ -11,7 +11,7 @@ const EventList = ({ items }) => {
                         key={x._id}
                         title={x.title}
                         location={x.location}
-                        image={x.image}
+                        image={x.imageUrl}
                         date={x.date}
                     />
                 ))}
