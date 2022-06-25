@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import CalendarIcon from '../../assets/svg/calendar.svg';
 import ArrowRightIcon from '../../assets/svg/arrow-right.svg';
 import LocationMarkerIcon from '../../assets/svg/location-marker.svg';
@@ -19,10 +21,12 @@ const EventItem = ({ title, image, date, location, id }) => {
         <li className={classes.EventItem}>
             <Card>
                 <div className={classes.ImageContainer}>
-                    <img
+                    <Image
                         className={classes.Image}
                         src={'/' + image}
                         alt={title}
+                        width={500}
+                        height={400}
                     />
                 </div>
                 <div className={classes.Content}>
@@ -39,7 +43,10 @@ const EventItem = ({ title, image, date, location, id }) => {
                     </div>
                     <div className={classes.Actions}>
                         <Button link={exploreLink} theme='invert'>
-                            Explore Event <ArrowRightIcon />
+                            <div className={classes.CTAExplore}>
+                                <p className={classes.CTAText}>Explore Event</p>
+                                <ArrowRightIcon className={classes.CTAIcon} />
+                            </div>
                         </Button>
                     </div>
                 </div>

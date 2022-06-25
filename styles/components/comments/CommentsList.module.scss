@@ -1,0 +1,27 @@
+.CommentsList {
+    margin-top: 2.5rem;
+
+    .CommentsToggle {
+        font-weight: 600;
+        font-size: 2rem;
+
+        button {
+            text-transform: uppercase;
+        }
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .CommentsTitle {
+        margin-top: 2rem;
+        padding: 1rem 2.2rem;
+        font-size: var(--title-font-size);
+        font-family: var(--title-font-family);
+        font-weight: var(--title-font-weight);
+    }
+
+    .List {
+        margin-top: 1.2rem;
+    }
+}

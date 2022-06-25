@@ -16,7 +16,7 @@ const EventDetail = ({ event }) => {
             <div className={classes.Header}>
                 <p>{event.title}</p>
                 <span className={classes.HeaderBg}>
-                    <img src={'/' + event.image} alt='event image' />
+                    <img src={'/' + event.imageUrl} alt='event image' />
                 </span>
             </div>
             <Card>

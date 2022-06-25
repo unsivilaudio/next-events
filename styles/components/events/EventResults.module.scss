@@ -1,5 +1,9 @@
 .EventResults {
-    padding: 2rem 3.5rem;
+    color: var(--text-light);
+    background: var(--gradient-blue-1);
+    border-radius: 0 1.5rem 0 1.5rem;
+    padding: 2.5rem;
+    padding-bottom: 3.2rem;
 
     .Header {
         text-align: center;
@@ -13,5 +17,11 @@
         display: flex;
         justify-content: center;
         margin-top: 1.5rem;
+
+        a {
+            &:hover {
+                color: inherit;
+            }
+        }
     }
 }

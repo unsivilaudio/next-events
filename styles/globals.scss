@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
     --text-light: #ebebef;
@@ -17,17 +17,18 @@
     --color-grey-dark-3: #606265;
     --color-grey-dark-4: #4e4f52;
 
-    --navbar-font-family: 'Poppins';
+    --gradient-blue-1: linear-gradient(to top right, #7b93d9, #4d74ea, #5b12ed);
+
+    --navbar-font-family: 'Poppins', 'Lato', sans-serif;
     --navbar-color-bg: #2d2d2d;
     --navbar-color-text: var(--text-light);
     --navbar-color-link: var(--text-light);
     --navbar-color-link-hover: #eb339b;
+    --header-font-family: 'Poppins', 'Lato', sans-serif;
+    --header-font-size: 3.2rem;
+    --header-font-weight: 200;
 
-    --header-font-family: 'Poppins';
-    --header-font-size: 4.5rem;
-    --header-font-weight: 300;
-
-    --title-font-family: 'Roboto';
+    --title-font-family: 'Roboto', sans-serif;
     --title-font-size: 2.8rem;
     --title-font-weight: 400;
 
@@ -39,11 +40,14 @@
         0 0 5px 3px rgba(0, 0, 0, 0.35);
     --card-border-radius: 1rem;
 
+    --input-bg: #fefefe;
+    --input-border-radius: 1rem;
+
     --button-color-primary: #5f7bd9;
     --button-color-primary-hover: #3b5fd4;
-    --button-color-success: #5ad142;
-    --button-color-success-hover: #1baf28;
-    --button-color-danger: #c76145;
+    --button-color-success: #3434a0;
+    --button-color-success-hover: #2222d8;
+    --button-color-danger: #ae5138;
     --button-color-danger-hover: #e7431a;
 
     --button-border-radius: 0.7rem;
@@ -77,14 +81,30 @@ body {
     background: var(--body-bg);
     font-size: 1.6rem;
     font-weight: 300;
-    font-family: 'Roboto', 'Poppins', san-serif;
+    font-family: 'Roboto', 'Poppins', 'Lato', sans-serif;
 
     a {
+        outline: none;
         text-decoration: none;
         font-family: inherit;
         color: var(--link-active);
         &:hover {
             color: var(--link-hover);
+        }
+    }
+
+    textarea,
+    input {
+        padding: 0.8rem 1.5rem;
+        background: var(--input-bg);
+        border: none;
+        border-radius: var(--input-border-radius);
+        font-family: inherit;
+        font-size: inherit;
+
+        &:focus-within {
+            outline: none;
+            box-shadow: 0 0 10px 3px var(--link-hover);
         }
     }
 }
